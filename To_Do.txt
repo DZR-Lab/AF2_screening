@@ -1,0 +1,3 @@
+To Do:
+- instructions to install 'AF2multimer-analysis' conda environment
+- README file instructions

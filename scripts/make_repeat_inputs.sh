@@ -2,7 +2,7 @@
 
 #SBATCH --account=rudner
 #SBATCH -p short  
-#SBATCH --time=0-00:01                    # Runtime in D-HH:MM format
+#SBATCH --time=0-00:01:30                    # Runtime in D-HH:MM format
 #SBATCH -c 1
 #SBATCH --mem=20K      
 #SBATCH -o logs/jobs/%j.out                            # File to which STDOUT will be written, including job ID (%j)
