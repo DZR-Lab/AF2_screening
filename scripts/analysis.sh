@@ -16,6 +16,6 @@ conda activate af2-multimer-analysis
 
 cd analysis/
 
-python3 /home/jw362/AF2multimer-analysis/colabfold_analysis.py ../output/part_1 ../output/part_2 ../output/part_3 ../output/part_4 ../output/part_5 ../output/part_6 ../output/part_7 ../output/part_8 ../output/part_9 ../output/part_10 ../output/part_11 ../output/part_12 ../output/part_13 ../output/part_14 ../output/part_15 ../output/part_16  --pae 12 --plddt 50 --pae-mode avg --combine-all 
+python3 $HOME/AF2multimer-analysis/colabfold_analysis.py ../output/part_1 ../output/part_2 ../output/part_3 ../output/part_4 ../output/part_5 ../output/part_6 ../output/part_7 ../output/part_8 ../output/part_9 ../output/part_10 ../output/part_11 ../output/part_12 ../output/part_13 ../output/part_14 ../output/part_15 ../output/part_16  --pae 12 --plddt 50 --pae-mode avg --combine-all 
 
 conda deactivate

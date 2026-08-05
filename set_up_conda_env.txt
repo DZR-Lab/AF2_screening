@@ -1,0 +1,25 @@
+# request an interactive session
+srun --account=rudner --pty -p interactive --mem 1G -t 0-00:30 /bin/bash
+
+#navigate to home directory
+cd $HOME
+
+# activate conda
+module load conda/miniforge3/24.11.3-0
+
+# create environment
+conda env create --file af2-multimer-analysis.yaml
+
+# test environment
+conda activate af2-multimer-analysis
+
+conda list
+
+# close environment
+conda deactivate
+
+#navigate to home directory
+cd $HOME
+
+# install Ernst's analysis code
+git clone https://github.com/walterlab-HMS/AF2multimer-analysis.git
