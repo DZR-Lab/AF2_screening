@@ -8,7 +8,7 @@ cd $HOME
 module load conda/miniforge3/24.11.3-0
 
 # create environment
-conda env create --file af2-multimer-analysis.yaml
+conda env create --file <PATH_TO_REPOSITORY_DIRECTORY>/set_up/af2-multimer-analysis.yaml
 
 # test environment
 conda activate af2-multimer-analysis
