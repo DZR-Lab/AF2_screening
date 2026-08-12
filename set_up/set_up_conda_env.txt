@@ -1,6 +1,9 @@
 # request an interactive session
 srun --account=rudner --pty -p interactive --mem 1G -t 0-00:30 /bin/bash
 
+# move conda environment configuration file to home directory
+mv set_up/af2-multimer-analysis.yaml $HOME
+
 #navigate to home directory
 cd $HOME
 
