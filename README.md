@@ -2,17 +2,21 @@
 
 ## description
 
-- lala
+A pipeline for performing and analyzing one-by-all Alphafold2 screens.
 
 ## requirements
 
-- lala
+- Designed to be run on O2, the high-performance cluster at HMS
+- Uses the slurm job scheduler to submit job arrays
+	- The slurm directives provided with these scripts presume that you are an O2 user with permissions to submit jobs to the Rudner Lab's GPUs. You will need to edit the `#SBATCH` headers appropriately if this is not the case.
+- Query protein sequence in FASTA format
+- Proteome to be screened against
 
 ## instructions
 
 **0. Set up to run analysis.**
 
-If this is your first time running an Alphafold screen using this repository, you will have to set up a conda environment to run the [analysis](https://github.com/walterlab-HMS/AF2multimer-analysis.git). Instructions to do this can be found in `set_up/set_up_conda_env.txt`.
+If this is your first time running an Alphafold screen using this repository, you will have to set up a conda environment to run the [analysis](https://github.com/walterlab-HMS/AF2multimer-analysis.git). Instructions to do this can be found in `set_up/set_up_conda_env.txt`. This should only need to be done once.
 
 **1. Clone repository.**
 
@@ -30,16 +34,18 @@ git clone https://github.com/jamwarner/AF2_screening.git
 mv AF2_screening <YOUR_NAME_HERE>
 ```
 
-**3. Edit `input/query.fa` to be your query seqeunce.**
+**3. Edit `input/query.fa` to be your query sequence.**
+
+File should be in FASTA format. For example:
 
 ```
->ID
+>UNIPROT_ID
 SEQUENCE
 ```
 
 **4. Upload proteome to `proteome/` directory.**
 
-Edit `scripts/one-by-all_generator.py` to correct file name.
+Edit `scripts/one-by-all_generator.py` to correct proteome file name.
 
 **5. Generate one-by-all file.**
 
@@ -55,6 +61,8 @@ python scripts/multiple_alphafold_files_roundrobin.py
 
 **7. Edit `scripts/proteome_screen_array.sh` header with your email.**
 
+O2 will now email you when your job begins and when it ends. This is helpful; runs frequently take days to complete.
+
 
 **8. Submit job.**
 
@@ -64,7 +72,7 @@ sbatch scripts/proteome_screen_array.sh
 
 **9. Restart jobs.**
 
-If jobs run out of time or memory, create input files to restart analysis where it left off
+Jobs frequently run out of time or memory, especially if you are screening against an entire proteome. If this happens, this script will create input files to restart the screen where it left off.
 
 ```bash
 sbatch scripts/make_repeat_inputs.sh
@@ -89,6 +97,8 @@ for name in output/*; do echo $name; ls -1 $name/*done.txt | wc -l; done
 
 # when the numbers are the same, your folds are all complete
 ```
+
+To analyze folds, run:
 
 ```bash
 sbatch scripts/analysis.sh
