@@ -16,7 +16,7 @@ A pipeline for performing and analyzing one-by-all Alphafold2 screens.
 
 **0. Set up to run analysis.**
 
-If this is your first time running an Alphafold screen using this repository, you will have to set up a conda environment to run the [analysis](https://github.com/walterlab-HMS/AF2multimer-analysis.git). Instructions to do this can be found in `set_up/set_up_conda_env.txt`. This should only need to be done once.
+If this is your first time running an Alphafold screen using this repository, you will have to set up a conda environment to run the [analysis](https://github.com/walterlab-HMS/AF2multimer-analysis.git). Instructions to do this can be found in `set_up/set_up_conda_env.txt` once you have cloned this repository. You only need to do this once -- the environment will be installed in your home directory on O2.
 
 **1. Clone repository.**
 
@@ -33,6 +33,14 @@ git clone https://github.com/jamwarner/AF2_screening.git
 ```bash
 mv AF2_screening <YOUR_NAME_HERE>
 ```
+
+Navigate into the new directory.
+
+```bash
+cd <YOUR_NAME_HERE>
+```
+
+All scripts should be run from this directory (the root of this repository).
 
 **3. Edit `input/query.fa` to be your query sequence.**
 
