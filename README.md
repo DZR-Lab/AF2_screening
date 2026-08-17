@@ -28,7 +28,7 @@ This should not be done in your `home/` directory, as the screen output will req
 srun --account=rudner --pty -p interactive --mem 1G -t 0-00:30 /bin/bash
 
 # once your session has started and you have your cursor back
-git clone https://github.com/jamwarner/AF2_screening.git
+git clone https://github.com/DZR-Lab/AF2_screening.git
 ```
 
 **2. Rename repository.**
