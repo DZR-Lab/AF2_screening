@@ -21,6 +21,8 @@ If this is your first time running an Alphafold screen using this repository, yo
 
 **1. Clone repository.**
 
+This should not be done in your `home/` directory, as the screen output will require more storage than O2 users are alloted. Use either your scratch directory  (`/n/scratch/users/...`) or the Rudner lab directory (`/n/data1/hms/microbiology/rudner/lab`).
+
 ```bash
 # request an interactive session on O2
 srun --account=rudner --pty -p interactive --mem 1G -t 0-00:30 /bin/bash
