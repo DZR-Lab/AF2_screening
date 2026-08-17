@@ -11,6 +11,7 @@ A pipeline for performing and analyzing one-by-all Alphafold2 screens.
 	- The slurm directives provided with these scripts presume that you are an O2 user with permissions to submit jobs to the Rudner Lab's GPUs. You will need to edit the `#SBATCH` headers appropriately if this is not the case.
 - Query protein sequence in FASTA format
 - Proteome to be screened against
+	- I recommend downloading from [Uniprot](https://www.uniprot.org/proteomes?query=*). The file should be in `.tsv` format and contain at least the following columns: "Entry" "Sequence" "Length"
 
 ## instructions
 
@@ -53,7 +54,7 @@ SEQUENCE
 
 **4. Upload proteome to `proteome/` directory.**
 
-Edit `scripts/one-by-all_generator.py` to correct proteome file name.
+Edit `scripts/one-by-all_generator.py` line 25 to correct proteome file name.
 
 **5. Generate one-by-all file.**
 
