@@ -34,13 +34,13 @@ git clone https://github.com/DZR-Lab/AF2_screening.git
 **2. Rename repository.**
 
 ```bash
-mv AF2_screening <YOUR_NAME_HERE>
+mv AF2_screening <YOUR_SCREEN_NAME_HERE>
 ```
 
 Navigate into the new directory.
 
 ```bash
-cd <YOUR_NAME_HERE>
+cd <YOUR_SCREEN_NAME_HERE>
 ```
 
 All scripts should be run from this directory (the root of this repository).
